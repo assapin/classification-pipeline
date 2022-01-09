@@ -1,0 +1,10 @@
+defaults:
+  - dataset: pets
+  - _self_
+_target_: trainer.dataloader.generator_loader.GeneratorDataLoader
+class_mode: 'categorical'
+batch_size: 32
+augmentations:
+  rescale: 0.003921568627451
+  horizontal_flip: False
+  vertical_flip: False

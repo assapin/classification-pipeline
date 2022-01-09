@@ -1,0 +1,6 @@
+defaults:
+  - optimizer: adam
+  - _self_
+_target_: trainer.models.resnet.ResNetModel
+init_weights: 'imagenet'
+loss: 'categorical_crossentropy'

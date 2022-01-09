@@ -1,0 +1,10 @@
+name: 'pets training'
+track: False
+defaults:
+  - dataloader: generator_loader
+  - model: resnet
+  - _self_
+trainer:
+  epochs: 2
+  checkpoint_dir: './cp'
+evaluator:

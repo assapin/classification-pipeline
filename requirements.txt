@@ -1,0 +1,7 @@
+tensorflow==2.6.0
+keras==2.6.0
+numpy==1.19.2
+hydra-core==1.1.1
+hydra-joblib-launcher
+clearml==1.1.5
+scipy

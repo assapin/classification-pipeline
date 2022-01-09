@@ -1,0 +1,15 @@
+dataset_name: 'pets'
+dataset_id: 'b213da21f3bd43cfb5abda04f366cfad'
+base_dir: ${oc.env:HOME}/projects/classification-pipeline/data/${.dataset_name}
+_target_: trainer.dataloader.dataset.dataset.BasicDataset
+train_dir: train
+val_dir: test
+track: False
+data_shape:
+  image_size:
+    - 64
+    - 64
+    - 3
+  num_classes: 2
+
+

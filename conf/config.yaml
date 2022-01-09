@@ -1,0 +1,7 @@
+defaults:
+  - data_pipeline: data_pipeline
+  - trainer: trainer
+tasks:
+  - data_pipeline
+  - trainer
+tracked: True
