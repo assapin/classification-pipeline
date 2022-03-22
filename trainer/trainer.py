@@ -63,6 +63,6 @@ def train(cfg):
     best_model = trainer.train()
     if cfg.track:
         task.upload_artifact("best_model", best_model)
-
+    return best_model
 
 
