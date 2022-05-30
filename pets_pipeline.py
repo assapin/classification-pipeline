@@ -27,7 +27,7 @@ def main(cfg):
     pipe.add_step(name='data_processing', parents=[],
                   base_task_project=settings.PROJECT_NAME,
                   base_task_name='pets preprocessing',
-                  base_task_id='31c08a33a7494de1905c671404880308',
+                  base_task_id='5adea120df044d629760babaa40d013e',
                   parameter_override={
                       'configuration/OmegaConf': dict(value=params['data_pipeline'],
                                                       name='OmegaConf',
@@ -38,7 +38,7 @@ def main(cfg):
     pipe.add_step(name='train', parents=['data_processing'],
                   base_task_project=settings.PROJECT_NAME,
                   base_task_name='pets training',
-                  base_task_id='528879824b7842f0a615576c27a13ea8',
+                  base_task_id='5e48ac7cf01b42a6a7f6f98e60f6a4cc',
                   parameter_override={
                       'configuration/OmegaConf': dict(value=params['trainer'],
                                                       name='OmegaConf',

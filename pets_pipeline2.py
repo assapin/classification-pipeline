@@ -18,18 +18,19 @@ def main(cfg):
 
 
 @PipelineDecorator.component(execution_queue='default', return_values=['dataset_id'],task_type=TaskTypes.data_processing)
-def wrap_etl(params):
-    dataset_id = etl(params)
+def wrap_etl(cfg):
+    dataset_id = etl(cfg)
     return dataset_id
 
 
 @PipelineDecorator.component(execution_queue='default', return_values=['dataset_id'], task_type=TaskTypes.training)
-def wrap_trainer(params):
-    return trainer.train(params)
+def wrap_trainer(cfg):
+    return trainer.train(cfg)
 
 
 @PipelineDecorator.pipeline(name='pets-training-pipeline', project='classification-example', version='1.0', default_queue='default' )
 def do_pipeline(params):
+    print(params['data_pipeline'])
     dataset_id = wrap_etl(params['data_pipeline'])
     print(params['trainer']['dataloader']['dataset']['dataset_id'])
     params['trainer']['dataloader']['dataset']['dataset_id'] = dataset_id
@@ -38,5 +39,5 @@ def do_pipeline(params):
 
 
 if __name__ == '__main__':
-    PipelineDecorator.run_locally()
+    #   PipelineDecorator.run_locally()
     main()

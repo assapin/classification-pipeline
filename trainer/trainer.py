@@ -59,7 +59,7 @@ def train(cfg):
     trainer = BasicTrainer(model.get_model(), loader.train_generator(), loader.val_generator(),
                            cfg.trainer.epochs, cfg.trainer.checkpoint_dir)
     if cfg.track:
-        task = Task.init(project_name=settings.PROJECT_NAME, task_name=cfg.name)
+        task = Task.init(project_name=settings.PROJECT_NAME, task_name=cfg.name, output_uri=True)
     best_model = trainer.train()
     if cfg.track:
         task.upload_artifact("best_model", best_model)

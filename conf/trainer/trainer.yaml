@@ -1,5 +1,5 @@
 name: 'pets training'
-track: False
+track: True
 defaults:
   - dataloader: generator_loader
   - model: resnet
